@@ -3,8 +3,8 @@ import logo from "./assets/Logo.svg";
 
 function Header() {
   return (
-    <header>
-      <img src={logo} alt="Little Lemon Logo" />
+    <header className="header">
+      <img src={logo} alt="Little Lemon Logo" className="header-logo" />
       <Nav />
     </header>
   );

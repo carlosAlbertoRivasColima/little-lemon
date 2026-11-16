@@ -1,6 +1,6 @@
 function Main() {
   return (
-    <main>
+    <main className="main">
       <h1>Little Lemon</h1>
       <p>Mediterranean restaurant</p>
     </main>
