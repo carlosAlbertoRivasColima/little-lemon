@@ -1,0 +1,12 @@
+.confirmed-booking {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.confirmed-booking p {
+  margin: 0.75rem auto 0;
+}
+
+.confirmed-booking__btn {
+  margin-top: 1.5rem;
+}

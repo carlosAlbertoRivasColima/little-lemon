@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./BookingForm.css";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes = [], dispatch, submitForm }) {
   const [date, setDate] = useState("");
-  const [time, setTime] = useState("17:00");
+  const [time, setTime] = useState(availableTimes[0] || "");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
@@ -15,7 +15,13 @@ function BookingForm({ availableTimes, dispatch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ date, time, guests, occasion });
+    const formData = {
+      date,
+      time,
+      guests,
+      occasion,
+    };
+    submitForm(formData);
   };
 
   return (
