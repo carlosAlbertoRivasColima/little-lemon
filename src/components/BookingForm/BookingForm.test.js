@@ -60,7 +60,7 @@ describe("BookingForm", () => {
       );
 
       const submitButton = screen.getByRole("button", {
-        name: /make your reservation/i,
+        name: /on click/i,
       });
       expect(submitButton).toBeDisabled();
 
@@ -84,7 +84,7 @@ describe("BookingForm", () => {
 
       const guestsInput = screen.getByLabelText(/number of guests/i);
       const submitButton = screen.getByRole("button", {
-        name: /make your reservation/i,
+        name: /on click/i,
       });
 
       fireEvent.change(guestsInput, { target: { value: "0" } });
@@ -120,7 +120,7 @@ describe("BookingForm", () => {
       const guestsInput = screen.getByLabelText(/number of guests/i);
       const occasionSelect = screen.getByLabelText(/occasion/i);
       const submitButton = screen.getByRole("button", {
-        name: /make your reservation/i,
+        name: /on click/i,
       });
 
       fireEvent.change(dateInput, { target: { value: validDate } });

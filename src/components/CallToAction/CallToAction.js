@@ -4,10 +4,10 @@ import "./CallToAction.css";
 
 function CallToAction() {
   return (
-    <section className="hero-section">
+    <section className="hero-section" aria-labelledby="hero-heading">
       <div className="hero-inner">
         <div className="hero-content">
-          <h1>Little Lemon</h1>
+          <h1 id="hero-heading">Little Lemon</h1>
           <h2>Chicago</h2>
           <p className="lead-text">
             We are a family owned Mediterranean restaurant, focused on traditional

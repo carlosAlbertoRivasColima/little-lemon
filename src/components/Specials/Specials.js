@@ -33,10 +33,18 @@ const specialsData = [
 
 function Specials() {
   return (
-    <section className="specials-section" id="menu">
+    <section
+      className="specials-section"
+      id="menu"
+      aria-labelledby="specials-heading"
+    >
       <div className="specials-header">
-        <h2>This weeks specials!</h2>
-        <Link to="/order" className="btn-primary">
+        <h2 id="specials-heading">This weeks specials!</h2>
+        <Link
+          to="/order"
+          className="btn-primary"
+          aria-label="View online menu"
+        >
           Online Menu
         </Link>
       </div>
@@ -47,11 +55,15 @@ function Specials() {
             <img src={item.image} alt={item.title} />
             <div className="card-body">
               <div className="card-header">
-                <h4>{item.title}</h4>
+                <h3 className="card-title">{item.title}</h3>
                 <span className="highlight-price">{item.price}</span>
               </div>
               <p>{item.description}</p>
-              <Link to="/order" className="card-link">
+              <Link
+                to="/order"
+                className="card-link"
+                aria-label={`Order ${item.title} for delivery`}
+              >
                 Order a delivery
               </Link>
             </div>

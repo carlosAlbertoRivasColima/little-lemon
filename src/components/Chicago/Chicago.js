@@ -4,10 +4,10 @@ import "./Chicago.css";
 
 function Chicago() {
   return (
-    <section className="about-section" id="about">
+    <section className="about-section" id="about" aria-labelledby="about-heading">
       <div className="about-content">
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
+        <h2 id="about-heading">Little Lemon</h2>
+        <h3>Chicago</h3>
         <p>
           Little Lemon opened in 1995 by two Italian brothers, Adrian and Mario.
           Despite the city's diversity, the two brothers recognized the lack of

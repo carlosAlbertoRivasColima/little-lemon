@@ -32,7 +32,7 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
   const isTimeValid = Boolean(time) && availableTimes.includes(time);
   const isGuestsValid =
     Number.isInteger(guests) && guests >= 1 && guests <= 10;
- 
+
   const isFormValid = isDateValid && isTimeValid && isGuestsValid;
 
   const handleDateChange = (e) => {
@@ -104,6 +104,9 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
           }}
           onBlur={() => setTouched((prev) => ({ ...prev, time: true }))}
           aria-invalid={!isTimeValid && touched.time}
+          aria-describedby={
+            !isTimeValid && touched.time ? "time-error" : undefined
+          }
           required
         >
           {availableTimes.map((availableTime) => (
@@ -113,7 +116,7 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
           ))}
         </select>
         {!isTimeValid && touched.time && (
-          <span className="form-error" role="alert">
+          <span id="time-error" className="form-error" role="alert">
             Please select an available time.
           </span>
         )}
@@ -159,6 +162,7 @@ function BookingForm({ availableTimes = [], dispatch, submitForm }) {
       <button
         type="submit"
         className="btn-primary booking-submit"
+        aria-label="On Click"
         disabled={!isFormValid}
       >
         Make Your reservation

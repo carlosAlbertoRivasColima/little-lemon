@@ -1,10 +1,9 @@
-// src/components/Nav.js
 import { Link } from "react-router-dom";
 import "./Nav.css";
 
 function Nav() {
   return (
-    <nav>
+    <nav aria-label="Main navigation">
       <ul className="nav-list">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/#about">About</Link></li>

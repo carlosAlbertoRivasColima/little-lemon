@@ -10,3 +10,35 @@
 .confirmed-booking__btn {
   margin-top: 1.5rem;
 }
+
+.booking-summary {
+  background-color: var(--color-highlight-light);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 400px;
+  text-align: left;
+  box-shadow: var(--shadow-card);
+}
+
+.booking-summary__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.12);
+}
+
+.booking-summary__item:last-child {
+  border-bottom: none;
+}
+
+.booking-summary__item dt {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.booking-summary__item dd {
+  margin: 0;
+  font-weight: 500;
+  color: var(--color-highlight-dark);
+}

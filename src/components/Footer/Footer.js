@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-inner">
         <img src={logo} alt="Little Lemon Logo" className="footer-logo" />
 
-        <div className="footer-col">
+        <nav className="footer-col" aria-label="Footer navigation">
           <h4>Navigation</h4>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -18,7 +18,7 @@ function Footer() {
             <li><Link to="/order">Order Online</Link></li>
             <li><Link to="/login">Login</Link></li>
           </ul>
-        </div>
+        </nav>
 
         <div className="footer-col">
           <h4>Contact</h4>
