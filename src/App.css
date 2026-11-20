@@ -142,7 +142,7 @@ span {
   transition: filter 0.2s ease, transform 0.15s ease;
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   filter: brightness(0.95);
   transform: translateY(-1px);
 }

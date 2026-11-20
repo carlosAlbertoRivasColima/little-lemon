@@ -52,3 +52,20 @@
   margin-top: 0.5rem;
   width: 100%;
 }
+
+.form-error {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  color: #b00020;
+}
+
+.btn-primary.booking-submit:disabled {
+  background-color: var(--color-highlight-light);
+  color: rgba(51, 52, 51, 0.5);
+  border: 1.5px solid rgba(51, 51, 51, 0.15);
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
