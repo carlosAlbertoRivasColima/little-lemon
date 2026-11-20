@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Little Lemon Restaurant — Meta Front-End Developer Capstone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web application for **Little Lemon Chicago**, a family-owned Mediterranean restaurant, built as the capstone project for the **Meta Front-End Developer Professional Certificate**. The application features a landing page with weekly specials, customer testimonials, and the restaurant's story, paired with an interactive table booking flow, a reservation summary confirmation page, accessibility enhancements, and unit tests.
 
-## Available Scripts
+## Key Features
 
-In the project directory, you can run:
+- **Home Page (`/`):**
+  - **Hero / Call to Action (`CallToAction`):** Introduces Little Lemon Chicago and provides a direct call to action to book a table.
+  - **Weekly Specials (`Specials`):** Highlights featured dishes (*Greek Salad*, *Bruschetta*, *Lemon Dessert*) with prices, descriptions, and delivery links.
+  - **Testimonials (`CustomersSay`):** Displays customer reviews and star ratings in a responsive card grid.
+  - **About (`Chicago`):** Shares the story of founders Mario and Adrian alongside layered photography.
+- **Table Booking Flow (`/booking`):**
+  - Dynamically updates available time slots via `useReducer` (`initializeTimes` and `updateTimes`) integrated with `fetchAPI` and `submitAPI`.
+  - Includes HTML5 attributes and client-side validation for reservation date (preventing past dates), available time, number of guests (`1` to `10`), and occasion (*Birthday*, *Anniversary*).
+- **Booking Confirmation (`/confirmed`):**
+  - Shows a confirmation status message along with a semantic summary (`<dl>`, `<dt>`, `<dd>`) of the submitted reservation details via router navigation state.
+- **Accessibility Enhancements:**
+  - Semantic landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) and a single `<h1>` per view while preserving visual hierarchy.
+  - Explicit form labels (`<label htmlFor="...">` mapped to input/select `id` attributes), `aria-invalid`, `aria-describedby`, `role="alert"`, `role="status"`, and `aria-label` attributes (including `aria-label="On Click"` on the booking submit button).
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React** (`useState`, `useEffect`, `useReducer`)
+- **React Router** (`Routes`, `Route`, `Link`, `useNavigate`, `useLocation`)
+- **CSS3** (Custom CSS variables, Grid & Flexbox layouts, responsive media queries)
+- **Jest & React Testing Library** for component and form validation tests
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install [Node.js](https://nodejs.org/) and npm. The project uses Create React App through `react-scripts`.
 
-### `npm run build`
+### Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the repository and install the dependencies listed in `package-lock.json`:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/carlosAlbertoRivasColima/little-lemon.git
+cd little-lemon
+npm ci
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can use `npm install` instead if you do not want to install from the lockfile.
 
-### `npm run eject`
+### Run the project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open [http://localhost:3000](http://localhost:3000) in your browser. The page reloads when you make changes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Run the tests
 
-## Learn More
+Run the test suite once (useful for CI):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm test -- --watchAll=false
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run tests in interactive watch mode instead:
 
-### Code Splitting
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+little-lemon/
+├── public/                 # Static files served by the app
+├── src/
+│   ├── assets/             # Images and logo
+│   ├── components/         # Page sections and booking components
+│   │   ├── BookingForm/
+│   │   ├── BookingPage/
+│   │   ├── CallToAction/
+│   │   ├── Chicago/
+│   │   ├── ConfirmedBooking/
+│   │   ├── CustomerSay/
+│   │   ├── Footer/
+│   │   ├── Header/
+│   │   ├── HomePage/
+│   │   ├── Main/
+│   │   ├── Nav/
+│   │   └── Specials/
+│   ├── App.js              # App routes
+│   ├── index.js            # React entry point
+│   └── setupTests.js       # Testing Library setup
+├── package.json            # Dependencies and npm scripts
+└── package-lock.json       # Locked dependency versions
